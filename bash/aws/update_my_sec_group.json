@@ -1,0 +1,14 @@
+{
+    "my-name": "Adge Denkers",
+    "current-wan-ip": "172.79.154.184/32",
+    "security-groups-to-update": [{
+            "group-name": "ADMIN",
+            "group-id": "sg-35840941",
+            "vpc-id": "vpc-5762713c"
+        },
+        {
+            "group-name": "Linux WHD",
+            "group-id": "sg-647ed90e"
+        }
+    ]
+}
