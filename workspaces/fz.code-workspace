@@ -3,5 +3,8 @@
 		{
 			"path": "/Users/adge/bin/fz"
 		}
-	]
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
 }
