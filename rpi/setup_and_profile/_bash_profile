@@ -68,13 +68,14 @@ alias :sysbin="cd $sysbin"
 
 # ----- Bash Profile
 # -----------------------------------------------------
-alias $profile="~/.bash_profile"
+profile="$HOME/.bash_profile"
+
 # ----- --- edit profile
 :be="nano $profile"
 :BE="nano $profile"
 :Be="nano $profile"
 # ----- --- reload profile
-alias :br=". ~/.bash_profile"
+alias :br=". $profile"
 
 # ----- Server Connections List
 # -----------------------------------------------------
@@ -139,7 +140,7 @@ extract () {
 # ----- Git Functions
 :git-update() {
     git add -A .
-    git commit "$@"
+    git commit -m "$@"
     git push
 }
 
@@ -156,7 +157,7 @@ extract () {
 
 :git-save() {
     git add -A .
-    git commit "$@"
+    git commit -m "$@"
     git push
 }
 
