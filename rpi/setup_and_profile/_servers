@@ -1,0 +1,55 @@
+#             _            _
+#   __ _   __| | ___ _ __ | | _____ _ __ ___
+#  / _` | / _` |/ _ \ '_ \| |/ / _ \ '__/ __|
+# | (_| || (_| |  __/ | | |   <  __/ |  \__ \
+#  \__,_(_)__,_|\___|_| |_|_|\_\___|_|  |___/
+# adge.denkers@gmail.com | https://github.com/adgedenkers
+# -------------------------------------------------------
+# file name: server-logins.sh
+# location: ~/bin/fz/
+# date: 2017-12-04
+# updated: 2018-11-26
+#
+# -------------------------------------------------------
+# Adge's Personal Servers
+# -------------------------------------------------------
+
+# jupiter.local
+alias :jupiter="ssh -i '~/.ssh/adge' jupiter.local"
+
+# denkers minecraft server
+alias :ftp-minecraft="ftp://40477:5F1XQx5oKJ32YNsT@158.69.127.150"
+
+# med-db server (AWS)
+alias :meddb="ssh -i '$keys/AHD01.pem' ec2-user@ec2-54-210-226-72.compute-1.amazonaws.com"
+
+# raspberry pi systems
+
+# --- rhubarb - primary pi system for the house
+alias :rhubarb="ssh -i '~/.ssh/adge' rhubarb.local"   # 10.4.1.150
+# runs internet connection speed logs
+# runs state machine for presence
+# runs state machine for x
+
+# --- apple     - proximity system 01 - breezeway #1 (on power-pole)
+
+# --- blueberry - proximity system 02 - breezeway #2 (by garage door)
+
+
+
+
+# === Generic Shortcut ===
+function :conn() {
+    # string is fed into command as follows
+    # ssh -i "keypair.pem" ec2-user@ec2-52-205-188-212.compute-1.amazonaws.com
+    
+    # example:
+    
+    # :conn "AHD01.pem" "ec2-user" "ec2-54-210-226-72.compute-1.amazonaws.com"
+    
+    # would be best to rewrite like this:
+    # $ :conn -k "KeyPair.pem" -u "username" -s "machine.server.com"
+    
+    output="ssh -i '$keys/$1' $2@$3"
+    eval $output
+}
